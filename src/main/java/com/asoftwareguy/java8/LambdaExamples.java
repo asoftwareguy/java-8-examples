@@ -10,9 +10,8 @@ import java.util.stream.IntStream;
 public class LambdaExamples {
 
     public static void main(String... args) {
-        List<Thing> things = new ArrayList<>();
-
         // create some Things
+        List<Thing> things = new ArrayList<>();
         IntStream.rangeClosed(1, 100).forEach(i -> {
             Thing newThing = new Thing("" + i, "Description " + i);
             things.add(newThing);
@@ -21,7 +20,7 @@ public class LambdaExamples {
         // print out only things that pass the predicate
         doWithThingsThatMatch(things,
                 thing -> Integer.parseInt(thing.getName()) <= 5,
-                thing -> System.out.println(thing)
+                System.out::println
         );
     }
 
@@ -30,7 +29,7 @@ public class LambdaExamples {
         Objects.requireNonNull(predicate);
         things
                 .stream()
-                .filter(thing -> predicate.test(thing))
-                .forEach(thing -> consumer.accept(thing));
+                .filter(predicate::test)
+                .forEach(consumer::accept);
     }
 }

@@ -1,23 +1,30 @@
 package com.asoftwareguy.java8;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.function.BiFunction;
 import java.util.function.Function;
 
 public class FunctionExamples {
 
     public static void main(String... args) {
+        // 'constructive' function
+        // have to construct the tuple (x,y) for every call to function
+        BiFunction<Integer, Integer, Integer> cf = (x, y) -> x * y;
+        Integer xTimesY = cf.apply(3, 2);
+        System.out.println(xTimesY); //prints "6"
 
-        Function<String, Integer> f1 = (String a) -> 1;
-        Integer r1 = f1.apply("abc123");
-        System.out.println(r1); //prints "1"
+        // 'destructive' function
+        Function<Integer, Function<Integer, Integer>> df = x -> (y -> x * y);
 
-        Function<Integer, List<Character>> f2 = (Integer a) -> new ArrayList<>();
+        // which can lend to a creating a partially applied function
+        Function<Integer, Integer> multiplyBy2 = df.apply(2);
 
-        Function<String, List<Character>> f3 = f1.andThen(f2);
-        List<Character> r3 = f3.apply("abc123");
-        r3.forEach(c -> System.out.println(c)); //prints nothing since f2 doesn't act upon it's input
+        // the previous is similar to "currying a closure" in Groovy
+        // e.g.
+        // def df = { Integer x, Integer y -> x * y}
+        // def multiplyBy2 = df.curry(2)
 
-        // f2.andThen(f1);  //fails type checking
+        // now we can finish applying the partially applied function
+        xTimesY = multiplyBy2.apply(3);
+        System.out.println(xTimesY); //prints "6"
     }
 }
