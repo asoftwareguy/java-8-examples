@@ -1,4 +1,4 @@
-package com.asoftwareguy.java8;
+package com.asoftwareguy.examples.java8;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

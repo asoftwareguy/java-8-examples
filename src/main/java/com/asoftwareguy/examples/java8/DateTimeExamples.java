@@ -1,6 +1,8 @@
-package com.asoftwareguy.java8;
+package com.asoftwareguy.examples.java8;
 
-import java.time.*;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.Month;
 import java.time.temporal.TemporalAdjuster;
 import java.time.temporal.TemporalAdjusters;
 
