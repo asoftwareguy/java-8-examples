@@ -3,7 +3,7 @@ package com.asoftwareguy.examples.java8;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
-public class FunctionExamples {
+class FunctionExamples {
 
     public static void main(String... args) {
         // 'constructive' function

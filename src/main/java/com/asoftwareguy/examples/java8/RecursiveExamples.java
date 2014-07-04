@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.function.BiFunction;
 import java.util.stream.IntStream;
 
-public class RecursiveExamples {
+class RecursiveExamples {
 
-    private static BiFunction<Integer, Number[], Number> sum = (index, array) -> {
+    private static final BiFunction<Integer, Number[], Number> sum = (index, array) -> {
         if (index == array.length) {
             return 0;
         } else {
@@ -19,10 +19,7 @@ public class RecursiveExamples {
 
     public static void main(String... args) {
         List<Number> numbers = new ArrayList<>();
-        IntStream.rangeClosed(1, 1000).forEach(i -> {
-            numbers.add(i);
-        });
-
+        IntStream.rangeClosed(1, 1000).forEach(numbers::add);
         Number total = sum.apply(0, numbers.toArray(new Number[numbers.size()]));
         System.out.println(total);
     }

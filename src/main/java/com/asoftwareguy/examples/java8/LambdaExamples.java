@@ -7,7 +7,7 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.stream.IntStream;
 
-public class LambdaExamples {
+class LambdaExamples {
 
     public static void main(String... args) {
         // create some Things
@@ -24,7 +24,7 @@ public class LambdaExamples {
         );
     }
 
-    public static void doWithThingsThatMatch(List<Thing> things, Predicate<Thing> predicate, Consumer<Thing> consumer) {
+    private static void doWithThingsThatMatch(List<Thing> things, Predicate<Thing> predicate, Consumer<Thing> consumer) {
         Objects.requireNonNull(things);
         Objects.requireNonNull(predicate);
         things

@@ -6,7 +6,7 @@ import java.time.Month;
 import java.time.temporal.TemporalAdjuster;
 import java.time.temporal.TemporalAdjusters;
 
-public class DateTimeExamples {
+class DateTimeExamples {
 
     public static void main(String... args) {
         LocalDate newYearsDay1982 = LocalDate.of(1982, 1, 1);

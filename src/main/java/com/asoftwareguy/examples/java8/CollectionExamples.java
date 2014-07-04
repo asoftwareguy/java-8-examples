@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.IntStream;
 
-public class CollectionExamples {
+class CollectionExamples {
 
     public static void main(String... args) {
         // create some Things

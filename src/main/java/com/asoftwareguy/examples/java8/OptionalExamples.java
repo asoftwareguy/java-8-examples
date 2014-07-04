@@ -7,7 +7,7 @@ import java.util.Optional;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class OptionalExamples {
+class OptionalExamples {
 
     public static void main(String... args) {
         // create some Things
@@ -37,7 +37,7 @@ public class OptionalExamples {
         }
         // prints "thing not found!"
 
-        // Optional<T> also has methods that take Consumer and Suppier objects,
+        // Optional<T> also has methods that take Consumer and Supplier objects,
         // which allow us to pass functional interfaces (lambda expressions)
         thingToFind = "1111";
         maybeAThing = findThingByName(thingToFind, lotsOfThings);

@@ -4,11 +4,11 @@ import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.Random;
 
-public class Thing {
+class Thing {
 
-    private String name;
-    private Integer age;
-    private String description;
+    private final String name;
+    private final Integer age;
+    private final String description;
     private BigDecimal price;
 
     public Thing(String name, String description) {
@@ -25,7 +25,7 @@ public class Thing {
         return name;
     }
 
-    public String getDescription() {
+    String getDescription() {
         return description;
     }
 
